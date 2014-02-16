@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report6" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cdc52ad4-ce09-41e7-b3ea-21e034321d76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="226"/>
+	<property name="ireport.y" value="0"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="jugador" class="java.lang.String"/>
+	<field name="consola" class="java.lang.String"/>
+	<variable name="consola_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{consola}]]></variableExpression>
+	</variable>
+	<variable name="consola_2" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{consola}]]></variableExpression>
+	</variable>
+	<variable name="consola_3" class="java.lang.Integer" resetType="Group" resetGroup="CONSOLAS" calculation="Count">
+		<variableExpression><![CDATA[$F{consola}]]></variableExpression>
+	</variable>
+	<group name="CONSOLAS">
+		<groupExpression><![CDATA[$F{consola}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<rectangle>
+					<reportElement x="0" y="0" width="555" height="27" backcolor="#000000" uuid="3e1f9601-5a46-464a-b8c2-63fc9e98d641"/>
+				</rectangle>
+				<textField>
+					<reportElement x="429" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="287116c5-c5b2-4b18-8405-c2dc8275ff93"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{consola}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50">
+				<staticText>
+					<reportElement x="326" y="17" width="125" height="20" uuid="bcb1587f-505a-4c87-a673-cea1015564c4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total Jugadores:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="451" y="17" width="100" height="20" uuid="1d99951a-f8d1-4e0c-acad-01f170196e0e"/>
+					<textFieldExpression><![CDATA[$V{consola_3}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="92" y="0" width="369" height="67" uuid="99be6a17-38d6-4c40-9c4a-b4c57adc1afa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[VENTA DE CONSOLAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="43" y="0" width="100" height="20" uuid="16514821-f45a-4176-8ec5-43edd7fb7433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="0" width="100" height="20" uuid="8e07b1e0-62d6-4fbd-8b33-a34a20377df2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jugador}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
